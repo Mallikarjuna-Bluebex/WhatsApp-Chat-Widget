@@ -13,7 +13,7 @@ function startChat() {
    const userInput = document.getElementById("userMessage").value;
   const message = encodeURIComponent(userInput);
   // Replace with your actual admin WhatsApp number (in international format without +)
-  const adminNumber = "";
+  const adminNumber = "917406499990";
   //const message = encodeURIComponent("Hello, I need your help.");
   const whatsappURL = `https://wa.me/${adminNumber}?text=${message}`;
   window.open(whatsappURL, "_blank");
