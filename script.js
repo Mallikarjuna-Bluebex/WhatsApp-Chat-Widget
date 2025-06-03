@@ -8,7 +8,6 @@ function autoResize(textarea) {
   textarea.style.height = textarea.scrollHeight + "px"; // Set to scroll height
 }
 
-
 function startChat() {
    const userInput = document.getElementById("userMessage").value;
   const message = encodeURIComponent(userInput);
