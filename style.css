@@ -4,6 +4,27 @@ body {
   font-family: Arial, sans-serif;
 }
 
+.chat-brand {
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  font-weight: bold;
+  font-size: 18px;
+  color: #3F51B5;
+  text-decoration: none;
+  text-shadow: 0 0 5px rgba(63, 81, 181, 0.5);
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+
+.chat-brand:hover {
+  text-decoration: underline;
+  color: #303F9F; /* Slightly darker blue on hover */
+}
+
+
 .close-chat {
   position: absolute;
   top: 8px;
@@ -51,7 +72,7 @@ body {
   position: absolute;
   bottom: 60px; /* Push it above the icon */
   right: 0;
-  width: 270px;
+  width: 280px;
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
@@ -72,15 +93,20 @@ body {
   height: 50px;
   object-fit: cover;
   border-radius: 10px;
+  margin-top: 20px;
   margin-bottom: 2px;
   /* Shadow effect */
   box-shadow: 0 4px 2px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  animation: fadeInUp 1s ease-in-out forwards;
 }
 
 
 .chat-box p {
   margin: 0 0 12px;
   font-size: 16px;
+  opacity: 0;
+  animation: fadeInUp 1s ease-in-out forwards;
 }
 
 .chat-box button {
@@ -124,21 +150,15 @@ body {
   -ms-overflow-style: none;       /* IE/Edge */
 }
 
+@media (max-width: 480px) {
+  .input-container textarea {
+    padding: 8px 12px; /* Slightly smaller padding for mobile */
+  }
+}
+
 /* For Chrome, Safari, and Edge (WebKit-based) */
 .input-container textarea::-webkit-scrollbar {
   display: none;
-}
-
-/* Smooth entrance animation */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 
@@ -155,8 +175,15 @@ body {
 
 .input-container button:hover {
   background-color: #20b858;
+  /*transform: scale(1.05); /* Slight zoom effect */
 }
 
+@media (max-width: 480px) {
+  .input-container button {
+    font-size: 16px;
+    padding: 6px 10px; /* Slightly smaller padding for mobile */
+  }
+}
 
 .input-container button img {
   width: 20px;
@@ -164,3 +191,21 @@ body {
   filter: invert(1);
 }
 
+/* Fade-in animation */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Smooth entrance animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
