@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WhatsApp Chat Widget</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- WhatsApp Chat Button -->
+  <div class="whatsapp-chat">
+    <div class="chat-box" id="chatBox">
+       <span class="close-chat" onclick="toggleChat()">❌</span>
+    <img src="assets/bluebex_logo.jpeg" alt="Support Image" class="chat-image" />
+       <p>Hi there! 👋<br>Chat with us on WhatsApp.</p>
+      <div class="input-container">
+      <textarea id="userMessage" rows="1" oninput="autoResize(this)">Hello, I need your help.</textarea>
+        <button onclick="startChat()">
+          ➤
+        </button>
+      </div>
+    </div>
+    <div class="chat-icon" onclick="toggleChat()">
+      <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp Icon" />
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
